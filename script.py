@@ -32,6 +32,5 @@ for line in df.iterrows():
     custo = driver.find_element(by=By.ID, value="custo").send_keys(line[1]['custo'])
     if not pd.isna(line[1]['obs']):
         obs = driver.find_element(by=By.ID, value="obs").send_keys(line[1]['obs'])
-    sleep(2)
     submit = driver.find_element(by=By.ID, value='pgtpy-botao').click()
     
