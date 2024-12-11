@@ -21,15 +21,15 @@ submit = driver.find_element(value='pgtpy-botao').click()
 
 df = pd.read_csv('produtos.csv')
 
-for line in df.iterrows():
+for index, row in df.iterrows():
     
-    codigo = driver.find_element(value="codigo").send_keys(line[1]['codigo'])
-    marca = driver.find_element(value="marca").send_keys(line[1]['marca'])
-    tipo = driver.find_element(value="tipo").send_keys(line[1]['tipo'])
-    categoria = driver.find_element(value="categoria").send_keys(line[1]['categoria'])
-    preco_unitario = driver.find_element(value="preco_unitario").send_keys(line[1]['preco_unitario'])
-    custo = driver.find_element(value="custo").send_keys(line[1]['custo'])
-    if not pd.isna(line[1]['obs']):
-        obs = driver.find_element(value="obs").send_keys(line[1]['obs'])
+    codigo = driver.find_element(value="codigo").send_keys(row['codigo'])
+    marca = driver.find_element(value="marca").send_keys(row['marca'])
+    tipo = driver.find_element(value="tipo").send_keys(row['tipo'])
+    categoria = driver.find_element(value="categoria").send_keys(row['categoria'])
+    preco_unitario = driver.find_element(value="preco_unitario").send_keys(row['preco_unitario'])
+    custo = driver.find_element(value="custo").send_keys(row['custo'])
+    if not pd.isna(row['obs']):
+        obs = driver.find_element(value="obs").send_keys(row['obs'])
     submit = driver.find_element(value='pgtpy-botao').click()
     
